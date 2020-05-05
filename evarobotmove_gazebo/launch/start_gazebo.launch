@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="world_path" default="$(find evarobotmove_gazebo)/worlds/temizlik_robotu_ortam.world"/>
+	<arg name="world_path" default="worlds/empty.world"/>
  <include file="$(find evarobotmove_gazebo)/launch/move.launch">
     <arg name="world_name" value="$(arg world_path)"/>  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
     <arg name="paused" value="false"/>
