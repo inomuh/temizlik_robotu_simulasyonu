@@ -59,77 +59,7 @@
 			<parent link="base_link"/>
 			<child link="basecolor_link"/>
 		</joint>    
-    <!-- LEFT WHEEL -->
-		<link name="left_wheel_link">
-			<collision>
-				<origin rpy="1.57075 0 0" xyz="0 0 0"/>
-				<geometry>
-					<cylinder length="0.035" radius="0.085"/>
-				</geometry>
-			</collision>
-			<visual>
-				<origin rpy="0 0 1.57079632679" xyz="0 0 0"/> 
-				<geometry>
-					 <mesh filename="package://evarobotmodel_description/meshes/rim.dae" scale="1 1 1"/> 
-				</geometry>
-				<material name="Grey"/>
-			</visual>
-			<inertial>
-				<origin rpy="1.57075 0 0" xyz="0 0 0"/>
-				<mass value="0.85"/>
-				<inertia
-					ixx="0.001" ixy="0" ixz="0"
-					iyy="0.001" iyz="0"
-					izz="0.001"/>
-			</inertial>
-		</link>
-		<gazebo reference="left_wheel_link">
-			<material>Gazebo/Grey</material>
-			<mu1>1.0</mu1>
-			<mu2>1.0</mu2>
-			<kp>1000000.0</kp>
-			<kd>100.0</kd>
-			<minDepth>0.001</minDepth>
-			<maxVel>1.0</maxVel>		
-		</gazebo>
-		<joint name="left_wheel_joint" type="continuous">
-			<axis xyz="0 1 0"/>
-			<parent link="base_link"/>
-			<child link="left_wheel_link"/>
-			<origin rpy="0 0 0" xyz="0 0.16 -0.119"/>
-		</joint>
-		<link name="left_wheeltire_link">
-			<collision>
-				<origin rpy="1.57075 0 0" xyz="0 0 0"/>
-				<geometry>
-					<cylinder length="0.001" radius="0.001"/>
-				</geometry>
-			</collision>
-			<visual>
-				<origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
-				<geometry>
-					<mesh filename="package://evarobotmodel_description/meshes/tire.dae"/> 
-				</geometry>
-			</visual>
-			<inertial>
-				<origin xyz="0 0 0" rpy="0 0 0"/>
-				<mass value="0.001"/>
-				<inertia
-					ixx="0.001" ixy="0" ixz="0"
-					iyy="0.001" iyz="0"
-					izz="0.001"/>
-			</inertial>
-		</link>
-		<gazebo reference="left_wheeltire_link">
-			<material>Gazebo/Black</material>
-		</gazebo>	
-		<joint name="left_wheeltire_joint" type="fixed">
-			<axis xyz="0 1 0"/>
-			<parent link="left_wheel_link"/>
-			<child link="left_wheeltire_link"/>
-			<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-		</joint>     
- <!-- RIGHT WHEEL -->
+    <!-- RIGHT WHEEL -->
 		<link name="right_wheel_link">
 			<collision>
 				<origin rpy="1.57075 0 0" xyz="0 0 0"/>
@@ -166,9 +96,79 @@
 			<axis xyz="0 1 0"/>
 			<parent link="base_link"/>
 			<child link="right_wheel_link"/>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.16 -0.119"/>
+			<origin rpy="0 0 0" xyz="0 0.16 -0.119"/>
 		</joint>
 		<link name="right_wheeltire_link">
+			<collision>
+				<origin rpy="1.57075 0 0" xyz="0 0 0"/>
+				<geometry>
+					<cylinder length="0.001" radius="0.001"/>
+				</geometry>
+			</collision>
+			<visual>
+				<origin rpy="0 0 1.57079632679" xyz="0 0 0"/>
+				<geometry>
+					<mesh filename="package://evarobotmodel_description/meshes/tire.dae"/> 
+				</geometry>
+			</visual>
+			<inertial>
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<mass value="0.001"/>
+				<inertia
+					ixx="0.001" ixy="0" ixz="0"
+					iyy="0.001" iyz="0"
+					izz="0.001"/>
+			</inertial>
+		</link>
+		<gazebo reference="right_wheeltire_link">
+			<material>Gazebo/Black</material>
+		</gazebo>	
+		<joint name="right_wheeltire_joint" type="fixed">
+			<axis xyz="0 1 0"/>
+			<parent link="right_wheel_link"/>
+			<child link="right_wheeltire_link"/>
+			<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		</joint>     
+ <!-- LEFT WHEEL -->
+		<link name="left_wheel_link">
+			<collision>
+				<origin rpy="1.57075 0 0" xyz="0 0 0"/>
+				<geometry>
+					<cylinder length="0.035" radius="0.085"/>
+				</geometry>
+			</collision>
+			<visual>
+				<origin rpy="0 0 1.57079632679" xyz="0 0 0"/> 
+				<geometry>
+					 <mesh filename="package://evarobotmodel_description/meshes/rim.dae" scale="1 1 1"/> 
+				</geometry>
+				<material name="Grey"/>
+			</visual>
+			<inertial>
+				<origin rpy="1.57075 0 0" xyz="0 0 0"/>
+				<mass value="0.85"/>
+				<inertia
+					ixx="0.001" ixy="0" ixz="0"
+					iyy="0.001" iyz="0"
+					izz="0.001"/>
+			</inertial>
+		</link>
+		<gazebo reference="left_wheel_link">
+			<material>Gazebo/Grey</material>
+			<mu1>1.0</mu1>
+			<mu2>1.0</mu2>
+			<kp>1000000.0</kp>
+			<kd>100.0</kd>
+			<minDepth>0.001</minDepth>
+			<maxVel>1.0</maxVel>		
+		</gazebo>
+		<joint name="left_wheel_joint" type="continuous">
+			<axis xyz="0 1 0"/>
+			<parent link="base_link"/>
+			<child link="left_wheel_link"/>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.16 -0.119"/>
+		</joint>
+		<link name="left_wheeltire_link">
 			<collision>
 				<origin rpy="1.57075 0 0" xyz="0 0 0"/>
 				<geometry>
@@ -191,13 +191,13 @@
 					izz="0.001"/>
 			</inertial>
 		</link>
-		<gazebo reference="right_wheeltire_link">
+		<gazebo reference="left_wheeltire_link">
 			<material>Gazebo/Black</material>
 		</gazebo>	
-		<joint name="right_wheeltire_joint" type="fixed">
+		<joint name="left_wheeltire_joint" type="fixed">
 			<axis xyz="0 1 0"/>
-			<parent link="right_wheel_link"/>
-			<child link="right_wheeltire_link"/>
+			<parent link="left_wheel_link"/>
+			<child link="left_wheeltire_link"/>
 			<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
 		</joint>     
 	<!--	  FRONT CASTER -->
@@ -1338,8 +1338,8 @@
 				<publishWheelTF>true</publishWheelTF>
 				<publishWheelJointState>true</publishWheelJointState>
 				<wheelAcceleration>1</wheelAcceleration>
-				<leftJoint>left_wheel_joint</leftJoint>
 				<rightJoint>right_wheel_joint</rightJoint>
+				<leftJoint>left_wheel_joint</leftJoint>
 				<wheelSeparation>0.33</wheelSeparation>
 				<wheelDiameter>0.17</wheelDiameter>
 				<wheelTorque>20</wheelTorque>
@@ -1355,7 +1355,7 @@
 	<gazebo>
         <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
           <robotNamespace>/</robotNamespace>
-          	<jointName>left_wheel_joint,right_wheel_joint,front_caster_base_rotate_joint,rear_caster_base_rotate_joint,front_caster_rotate_wheel_joint,rear_caster_rotate_wheel_joint</jointName>
+          	<jointName>right_wheel_joint,left_wheel_joint,front_caster_base_rotate_joint,rear_caster_base_rotate_joint,front_caster_rotate_wheel_joint,rear_caster_rotate_wheel_joint</jointName>
           <updateRate>10.0</updateRate>
           <alwaysOn>true</alwaysOn>
         </plugin>
